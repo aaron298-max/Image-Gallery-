@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery — CodeAlpha</title>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-eyebrow">CodeAlpha Internship Task 1</div>
+  <h1>Photo Gallery</h1>
+  <p>Click any image to open lightbox · Use arrow keys or swipe to navigate</p>
+  <div class="header-stats">
+    <div class="stat">
+      <span class="stat-num" id="totalCount">12</span>
+      <span class="stat-label">Photos</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">5</span>
+      <span class="stat-label">Categories</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num" id="likedCount">0</span>
+      <span class="stat-label">Liked</span>
+    </div>
+  </div>
+</header>
+
+<!-- SEARCH -->
+<div class="search-wrap">
+  <div class="search-box">
+    <span>🔍</span>
+    <input type="text" id="searchInput" placeholder="Search photos..." autocomplete="off">
+  </div>
+</div>
+
+<!-- FILTERS -->
+<div class="filter-section">
+  <div class="filters" id="filterBar"></div>
+  <div class="sort-row">
+    <span>Sort:</span>
+    <button class="sort-btn active" data-sort="default">Default</button>
+    <button class="sort-btn" data-sort="name">A–Z</button>
+    <button class="sort-btn" data-sort="cat">Category</button>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery-wrap">
+  <div class="gallery-toolbar">
+    <div class="gallery-count">Showing <span id="visibleCount">12</span> of <span id="totalCountB">12</span> photos</div>
+    <div class="view-toggle">
+      <button class="view-btn active" id="gridViewBtn" title="Grid view">⊞</button>
+      <button class="view-btn" id="listViewBtn" title="List view">☰</button>
+    </div>
+  </div>
+  <div class="gallery" id="gallery"></div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-topbar">
+    <div class="lb-counter-pill" id="lbCounter">1 / 12</div>
+    <div class="lb-top-actions">
+      <button class="lb-icon-btn" id="lbFavBtn" title="Like">🤍</button>
+      <button class="lb-icon-btn" id="lbShareBtn" title="Copy link">🔗</button>
+      <button class="lb-icon-btn close-btn" id="lbClose" title="Close (Esc)">✕</button>
+    </div>
+  </div>
+
+  <div class="lightbox-inner" id="lbInner">
+    <button class="lightbox-nav lightbox-prev" id="lbPrev">&#8592;</button>
+    <div class="lightbox-content">
+      <div class="lightbox-img-wrap">
+        <img id="lbImg" src="" alt="">
+      </div>
+      <div class="lightbox-meta">
+        <h3 id="lbTitle"></h3>
+        <div class="lb-meta-row">
+          <div class="lb-cat-badge" id="lbCatBadge"></div>
+          <div class="lb-dot"></div>
+          <div class="lb-idx" id="lbIdxLabel"></div>
+        </div>
+      </div>
+    </div>
+    <button class="lightbox-nav lightbox-next" id="lbNext">&#8594;</button>
+  </div>
+
+  <div class="lb-thumbstrip" id="lbThumbstrip"></div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
